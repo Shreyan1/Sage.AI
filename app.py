@@ -33,20 +33,38 @@ def get_messages():
     return jsonify({'status': 'success', 'messages': messages})
 
 def get_gpt_response(user_message):
-    try:
-        # Using API to generate completion
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a chat-based AI helper."},
-                {"role": "user", "content": user_message}
-            ]
-        )
+         # If the response contains an image request, generate an image using DALL-E
+        if ("image of") in user_message.lower():
+            try:
+                image_response = openai.Image.create(
+                    model="dall-e-3",
+                    prompt=user_message,
+                    size="1024x1024",
+                    quality="standard",
+                    n=1,
+                    style="natural",
+                )# read https://platform.openai.com/docs/api-reference/images/create for reference
+            
+                return image_response.data[0].url
+            
+            except Exception as image_error:
+                print(f"Error generating image: {image_error}")
+                return 'Error: Unable to generate image'
+        
+        else:
+            try:
+                # Using API to generate completion
+                response = openai.ChatCompletion.create(
+                model="gpt-4-1106-preview",
+                messages=[
+                    {"role": "system", "content": "You are a helpful friend who is also a wise Sage and you speak with a slight touch of Shakespearean English."},
+                    {"role": "user", "content": user_message}
+                ])
+                return response.choices[0].message['content']
 
-        return response.choices[0].message['content']
-    except Exception as e:
-        print(f"Error generating GPT response: {e}")
-        return 'Error: Unable to get response from GPT'
+            except Exception as e:
+                print(f"Error generating GPT response: {e}")
+                return 'Error: Unable to get response from GPT'
 
 @app.route('/get_answer', methods=['GET'])
 def get_answer():
