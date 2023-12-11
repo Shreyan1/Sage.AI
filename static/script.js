@@ -8,7 +8,27 @@ function createMessageBubble(message) {
     bubble.classList.add('message-bubble');
 
     const content = document.createElement('p');
-    content.innerHTML = message.message; // Use innerHTML to parse HTML content
+    const isImageUrl = message.message.toLowerCase().includes('oaidalleapiprodscus.blob.core.windows.net');
+
+    if (isImageUrl) {
+        // If image link, create an <a> element
+        const imageLink = document.createElement('a');
+        imageLink.href = message.message;
+        imageLink.target = '_blank'; // Open in a new tab
+        imageLink.rel = 'noopener noreferrer'; // Security best practice for opening in a new tab
+
+        const image = document.createElement('img');
+        image.src = message.message;
+        image.style.maxWidth = '150px';  // Limit width to 150 pixels
+        image.style.maxHeight = '150px'; // Limit height to 150 pixels
+
+        // Append the image to the anchor element
+        imageLink.appendChild(image);
+        content.appendChild(imageLink);
+    } else {
+        // If not an image URL, display the text
+        content.innerHTML = message.message;
+    }
 
     bubble.appendChild(content);
 
@@ -17,21 +37,19 @@ function createMessageBubble(message) {
     } else if (message.username === 'GPT') {
         bubble.classList.add('gpt-message');
     }
+
     return bubble;
 }
 
-// Function to update the conversation dynamically
 function updateConversation() {
-
     showGifAnimation();
     fetch('/get_messages')
         .then(response => response.json())
         .then(data => {
-            // Process the JSON data and update the conversation
             const messages = data.messages;
-
-            // Clear the existing messages
             const messageContainer = document.getElementById('message-container');
+            
+            // Clear the existing messages
             messageContainer.innerHTML = '';
 
             // Add the new messages to the conversation
@@ -39,10 +57,13 @@ function updateConversation() {
                 const messageBubble = createMessageBubble(message);
                 messageContainer.appendChild(messageBubble);
             }
+
+            // Scroll to the bottom
+            messageContainer.scrollTop = messageContainer.scrollHeight;
         })
         .catch(error => {
             console.error('Error during fetch operation:', error);
-        })
+        });
 }
 
 window.addEventListener('beforeunload', function() {
