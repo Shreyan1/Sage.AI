@@ -19,7 +19,7 @@ This project is a dynamic AI chatbot with GPT-4-Turbo and Dall-E-3 that helps us
 1. Clone the repository.
 2. pip3 install -r requirements.txt
 3. Run the Flask app with `python app.py`.
-4. Visit `http://127.0.0.1:5000/` and start chatting!
+4. Visit your local `http://127.0.0.1:XXXX/` and start chatting!
 
 ## Technologies Used 💻
 
@@ -40,6 +40,12 @@ If you encounter any issues or have suggestions, please [open an issue](https://
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Contact the Developer
+
+**Shreyan Basu Ray**
+[LinkedIn](https://www.linkedin.com/in/shreyanbasuray/)
+[Twitter](https://twitter.com/theengineerboy1)
+[Mail](shreyanbasuray@proton.me)
 ---
 
 Get ready to explore the exciting world of conversation and technology! 🚀💬

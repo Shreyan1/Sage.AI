@@ -10,8 +10,14 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="App Logo">
-        <h1>Sage.AI</h1>
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Sage AI Logo">
+            <h1>Sage.AI</h1>
+        </div>
+        <div class="header-buttons">
+            <a href="https://github.com/Shreyan1/Sage.AI" target="_blank" rel="noopener noreferrer" class="github-icon"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Shreyan1/Sage.AI/blob/main/README.md#sageai-" target="_blank" rel="noopener noreferrer" class="documentation-button">Documentation</a>
+        </div>
     </div>
     <div class="container">
         <div id="message-container">
@@ -26,15 +32,18 @@
                 </div>
             {% endfor %}
         </div>
-        <div id="bottom-section" class="{% if not messages %}center{% endif %}">
-
-            <form id="message-form">
-                <input type="text" id="message" placeholder="I'm as wise as a Sage. Ask Me Anything !" required>
-                <button type="submit" class="send-button"><i class="fas fa-paper-plane"></i></button>
+        <div id="bottom-section">
+            <!-- Message form -->
+            <form id="message-form" class="message-form">
+                <input type="text" id="message" placeholder="Ask, o friend, and unravel my infinite powers !" autocomplete="off">
+                <button type="submit" class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </form>
-            <button id="reset-button" onclick="resetConversation()">Reset Chat</button>
+
+            <!-- Reset button below the message box -->
+            <button id="reset-button" class="reset-button" onclick="resetConversation()">Reset Chat</button>
         </div>
-    
         <script src="{{ url_for('static', filename='script.js') }}"></script>
         
     </body>

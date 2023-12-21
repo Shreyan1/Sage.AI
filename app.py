@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import openai
 from apikey import APIKEY
+from about import identity
 
 openai.api_key = APIKEY  # Set OpenAI API key
 
@@ -40,7 +41,7 @@ def get_gpt_response(user_message):
                     model="dall-e-3",
                     prompt=user_message,
                     size="1024x1024",
-                    quality="standard",
+                    quality="hd", #change to "standard" for less token utilisation
                     n=1,
                     style="natural",
                 )# read https://platform.openai.com/docs/api-reference/images/create for reference
@@ -57,7 +58,7 @@ def get_gpt_response(user_message):
                 response = openai.ChatCompletion.create(
                 model="gpt-4-1106-preview",
                 messages=[
-                    {"role": "system", "content": "You are a helpful friend who is also a wise Sage and you speak with a slight touch of Shakespearean English."},
+                    {"role": "system", "content": identity},
                     {"role": "user", "content": user_message}
                 ])
                 return response.choices[0].message['content']
@@ -72,7 +73,8 @@ def get_answer():
         latest_gpt_response = messages[-1]['message']
         return jsonify({'status': 'success', 'message': latest_gpt_response})
     else:
-        return jsonify({'status': 'error', 'message': 'No messages available'})
+        return jsonify({'status': 'success', 'message': 'Awaiting response...'})
+
 
 @app.route('/reset_conversation', methods=['POST'])
 def reset_conversation():
