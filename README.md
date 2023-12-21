@@ -42,10 +42,11 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact the Developer
 
-**Shreyan Basu Ray**
-[LinkedIn](https://www.linkedin.com/in/shreyanbasuray/)
-[Twitter](https://twitter.com/theengineerboy1)
-[Mail](shreyanbasuray@proton.me)
+Hey its **Shreyan Basu Ray**, connect with me at - 
+- [LinkedIn - linkedin.com/in/shreyanbasuray/](https://www.linkedin.com/in/shreyanbasuray/)
+- [Twitter - @theengineerboy1](https://twitter.com/theengineerboy1)
+- [Mail - shreyanbasuray@proton.me](shreyanbasuray@proton.me)
+
 ---
 
 Get ready to explore the exciting world of conversation and technology! 🚀💬
