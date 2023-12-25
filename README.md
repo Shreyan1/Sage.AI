@@ -1,6 +1,8 @@
 # Sage.AI 🧙🧠 
 Welcome to the Sage.AI project, where technology meets conversation in a unique and engaging way! 🌐💬
 
+This is just a Readme file. For detailed descriptions and processes, please refer to the technical documentaion here - [Technical Documentation for Sage.AI](https://drive.google.com/file/d/1_VFpiMQfQXvEwWGYuCPXUaU0q0qVH6W-/view)
+
 ## Overview 🌈
 
 This project is a dynamic AI chatbot with GPT-4-Turbo and Dall-E-3 that helps users harness the power of AI to the next level. Powered by a robust tech stack, it seamlessly integrates Flask, HTML, CSS, JavaScript, and the magic of OpenAI's GPT-4-Turbo and Dall-E-3.
