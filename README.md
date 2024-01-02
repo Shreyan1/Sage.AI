@@ -31,7 +31,7 @@ This project is an OpenSource AI chatbot with GPT-4-Turbo and Dall-E-3 that help
   Click below to check out the Latest Version upgrade promo for Sage.AI ver2.0 :
 </h3>
 <p align="center">
-  <a href="https://youtu.be/wmcNbKDmlIk">
+  <a href="https://youtu.be/mYTZTGl5i7A">
     <img src="https://github.com/Shreyan1/items/blob/main/Sage2.gif" alt="Video GIF" width="720"/>
   </a>
 </p>
