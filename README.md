@@ -28,7 +28,7 @@ This is just a Readme file. For detailed descriptions and processes, please refe
 This project is an OpenSource AI chatbot with GPT-4-Turbo and Dall-E-3 that helps users harness the power of AI to the next level. Powered by a robust tech stack, it seamlessly integrates Flask, HTML, CSS, JavaScript, and the magic of OpenAI's GPT-4-Turbo and Dall-E-3.
 
 <h3>
-  Check out Sage.AI ver2.0 - the latest version upgrade promo video here :
+  Click below to check out the Latest Version upgrade promo for Sage.AI ver2.0 :
 </h3>
 <p align="center">
   <a href="https://youtu.be/wmcNbKDmlIk">
