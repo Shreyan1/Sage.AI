@@ -80,9 +80,11 @@ Contributions are welcome! Feel free to -
 
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/Shreyan1/Sage.AI/issues) here.
 
-## License 📜
+<hr>
 
-This project is licensed under the [MIT License](LICENSE)
+## Support me and my project 👏
+
+GitHub : [https://github.com/sponsors/Shreyan1/](https://github.com/sponsors/Shreyan1/) 
 
 ---
 
