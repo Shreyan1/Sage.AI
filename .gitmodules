@@ -1,0 +1,3 @@
+[submodule "WhisperMe"]
+	path = WhisperMe
+	url = https://github.com/Shreyan1/WhisperMe.git
