@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "You are such a GENIUS !! You found your first issue in this project, this is what helps us to grow more by resolving. Thanks bruh !"
+        pr-message: "Well well the GENIUS is here !! ;)  This looks like a greeatt PR ! Let us review together and merge ittt !!! "
