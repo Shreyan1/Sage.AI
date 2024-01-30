@@ -1,3 +1,6 @@
 [submodule "WhisperMe"]
 	path = WhisperMe
 	url = https://github.com/Shreyan1/WhisperMe.git
+[submodule "Notes-n-Codes"]
+	path = Notes-n-Codes
+	url = https://github.com/Shreyan1/Notes-n-Codes.git
